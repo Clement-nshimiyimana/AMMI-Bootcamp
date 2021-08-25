@@ -1,4 +1,5 @@
 from Train import train_node_classifier
+from Model import GNNModel, MLPModel
 from Utils import *
 
 def print_results(result_dict):

@@ -1,4 +1,5 @@
 from Utils import *
+from Model import GNNModel, MLPModel
 import os
 import pytorch_lightning as pl
 import pytorch_lightning as pl
