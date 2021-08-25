@@ -1,29 +1,12 @@
-import torchnet as tnt
 import os
-import networkx as nx
-import numpy as np
-import torch
-
-import torch.nn as nn
-import torch.nn.functional as F
-
-try:
-    import pytorch_lightning as pl
-except ModuleNotFoundError: # Google Colab does not have PyTorch Lightning installed by default. Hence, we do it here if necessary
-    pip install pytorch-lightning==1.3.4
-    import pytorch_lightning as pl
-from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
-
-import torch_geometric
-import torch_geometric.nn as geom_nn
-import torch_geometric.data as geom_data
-from torch_geometric.utils import to_dense_adj
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
-
-
+import torch_geometric
+import torch_geometric.nn as geom_nn
+import torch_geometric.data as geom_data
+from torch_geometric.utils import to_dense_adj
 from Utils import *
 
 

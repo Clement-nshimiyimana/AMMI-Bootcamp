@@ -1,50 +1,28 @@
-## Standard libraries
-import os
-import json
-import math
-import numpy as np 
-import time
-
-## Imports for plotting
-import matplotlib.pyplot as plt
-%matplotlib inline 
-from IPython.display import set_matplotlib_formats
-set_matplotlib_formats('svg', 'pdf') # For export
-from matplotlib.colors import to_rgb
-import matplotlib
-matplotlib.rcParams['lines.linewidth'] = 2.0
-import seaborn as sns
-sns.reset_orig()
-sns.set()
-
-## Progress bar
-from tqdm.notebook import tqdm
-
 ## PyTorch
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.data as data
 import torch.optim as optim
 
-# PyTorch Lightning
-try:
-    import pytorch_lightning as pl
-except ModuleNotFoundError: # Google Colab does not have PyTorch Lightning installed by default. Hence, we do it here if necessary
-    pip install pytorch-lightning==1.3.4
-    import pytorch_lightning as pl
+
+import pytorch_lightning as pl
 from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 import torch_geometric
 from torch_geometric.utils import to_dense_adj
-# Path to the folder where the datasets are/should be downloaded (e.g. CIFAR10)
+import torch_geometric.nn as geom_nn
+import torch_geometric.data as geom_data
+
+
+
 DATASET_PATH = "../data"
-# Path to the folder where the pretrained models are saved
+
 CHECKPOINT_PATH = "../saved_models/tutorial7"
 
 # Setting the seed
 pl.seed_everything(123)
 
-# Ensure that all operations are deterministic on GPU (if used) for reproducibility
 torch.backends.cudnn.determinstic = True
 torch.backends.cudnn.benchmark = False
 
@@ -81,7 +59,7 @@ data_cora = dataset[0]
 cit = torch_geometric.datasets.Planetoid(root='/', name='Citeseer')
 data_cit = cit[0]
 
-
+#######Training, computing accuracy and loss##############
 class NodeLevelGNN(pl.LightningModule):
     
     def __init__(self, model_name, **model_kwargs):
@@ -116,14 +94,14 @@ class NodeLevelGNN(pl.LightningModule):
         
         
     def configure_optimizers(self):
-        # We use SGD here, but Adam works as well 
+
         optimizer = optim.Adam(self.parameters(), lr=0.01, weight_decay=5e-4)
         return optimizer
         
         
     def training_step(self, batch, batch_idx):
         loss, acc = self.forward(batch, mode="train")
-        self.log('train_loss', loss)
+        self.log('train_loss', loss)#####Automatic logging from torch lightning Module
         self.log('train_acc', acc)
         return loss
         
