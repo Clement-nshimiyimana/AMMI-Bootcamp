@@ -14,7 +14,10 @@ Pytorch (>0.12)
 
 
 Run the demo
+
+
 cd GCN
+
 python Main.py
 
 In this work, we load data from pytorch geometric.  We used citation network data (Cora, Citeseer and Pubmed). The original datasets can be found here: http://www.cs.umd.edu/~sen/lbc-proj/LBC.html. In our version (see data folder) we use dataset splits provided by https://github.com/kimiyoung/planetoid (Zhilin Yang, William W. Cohen, Ruslan Salakhutdinov, Revisiting Semi-Supervised Learning with Graph Embeddings, ICML 2016).
