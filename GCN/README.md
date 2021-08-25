@@ -14,6 +14,8 @@ Pytorch (>0.12)
 
 
 Run the demo
+
+
 cd GCN
 python Main.py
 
