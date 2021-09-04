@@ -1,4 +1,4 @@
-GCN: SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS
+This is a pytorch implementation(from scratch)of a paper produced in 2017 which is titled as "GCN: SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS". 
 Paper Reference: https://arxiv.org/abs/1609.02907
 
 Install the requirement libraries
