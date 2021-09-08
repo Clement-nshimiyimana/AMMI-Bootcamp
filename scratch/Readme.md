@@ -1,7 +1,7 @@
 This is a pytorch implementation(from scratch)of a paper produced in 2017 which is titled as "GCN: SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS". 
 Paper Reference: https://arxiv.org/abs/1609.02907
 
-Install the requirement libraries
+**Install the requirement libraries**
 
 
 !pip install -q torch-scatter -f https://pytorch-geometric.com/whl/torch-1.9.0+cu102.html
@@ -11,10 +11,10 @@ Install the requirement libraries
 !pip install -q torch-geometric
 
 
-Clone the repository
+**Clone the repository**
 !git clone https://github.com/Clement-nshimiyimana/AMMI-Bootcamp.git
 
 
-Train the model of Cora dataset
+**Train the model of Cora dataset**
 
 !python GCN/Main.py  --num-epochs 200 --data 'Cora' --num-hid  16  
