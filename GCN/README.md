@@ -1,4 +1,4 @@
-**Graph Convolutional Networks
+**Graph Convolutional Networks**
 
 This is pytorch implementation of paper :https://arxiv.org/pdf/1609.02907.pdf which was implemented before in tensorFlow. 
 The main idea of this paper is to use Graph Convolutional Networks for the task of (semi-supervised) classification of nodes in a graph.
@@ -6,14 +6,14 @@ The main idea of this paper is to use Graph Convolutional Networks for the task 
 
 Author: Thomas N. Kipf, Max Welling, Semi-Supervised Classification with Graph Convolutional Networks (ICLR 2017)
 
-**Installation
+**Installation**
 
 python setup.py install
 Requirements
 Pytorch (>0.12)
 
 
-**Run the demo
+**Run the demo**
 
 
 cd GCN
